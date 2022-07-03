@@ -148,15 +148,6 @@ export default {
     closeConfirmModal() {
       this.showConfirmModal = false;
     },
-    toggleAcc() {
-      this.accMenu = !this.accMenu;
-    },
-    toggleLang() {
-      this.langMenu = !this.langMenu;
-    },
-    toggleSeason() {
-      this.seasonMenu = !this.seasonMenu;
-    },
 
     closeModal() {
       this.showModal = false;

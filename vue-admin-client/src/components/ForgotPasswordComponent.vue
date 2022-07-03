@@ -1,24 +1,26 @@
 <template>
-  <div class="forgot-pass">
-    <form @submit.prevent>
-      <h3>{{ $t("forgot password") }}</h3>
-      <div class="form-group">
-        <label>
-          {{
-            $t("Reset link will be sent to the email you enter below")
-          }}</label
-        >
-        <input type="email" required v-model="email" />
+  <main>
+    <div class="forgot-pass">
+      <form @submit.prevent>
+        <h3>{{ $t("forgot password") }}</h3>
+        <div class="form-group">
+          <label>
+            {{
+              $t("Reset link will be sent to the email you enter below")
+            }}</label
+          >
+          <input type="email" required v-model="email" />
+        </div>
+      </form>
+      <div class="actions">
+        <button class="tertiary" @click.prevent="$router.go(-1)">
+          {{ $t("Back") }}
+        </button>
+        <button @click="handleSubmit">{{ $t("submit") }}</button>
       </div>
-    </form>
-    <div class="actions">
-      <button class="tertiary" @click.prevent="$router.go(-1)">
-        {{ $t("Back") }}
-      </button>
-      <button @click="handleSubmit">{{ $t("submit") }}</button>
+      <p v-if="isLoading">Loading.....</p>
     </div>
-    <p v-if="isLoading">Loading.....</p>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -41,10 +43,17 @@ export default {
 </script>
 
 <style scoped>
+main {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+  color: var(--primary-900);
+}
 h3 {
-  color: var(--neutral-600);
-  font-weight: 500;
-  font-size: var(--text-base);
+  color: var(--primary-900);
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .forgot-pass {
@@ -60,7 +69,7 @@ form {
   text-align: left;
 }
 label {
-  color: var(--neutral-900);
+  color: var(--primary-900);
   display: inline-block;
   margin: var(--spacing-regular) 0 var(--spacing-base);
   font-size: var(--text-small);
@@ -73,16 +82,18 @@ input {
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid var(--neutral-600);
-  color: var(--neutral-600);
+  border: 1px solid var(--neutral-600);
+  border-radius: 5px;
+  color: var(--primary-900);
+  background: transparent;
 }
 button {
-  background: var(--success-200);
-  color: var(--neutral-50);
+  background: var(--primary-900);
+  color: var(--neutral-200);
   border: 0;
   padding: var(--spacing-small) var(--spacing-large);
   margin-top: var(--spacing-regular);
-  border-radius: 20px;
+  border-radius: 5px;
   cursor: pointer;
 }
 

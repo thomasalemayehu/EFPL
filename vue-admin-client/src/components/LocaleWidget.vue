@@ -1,12 +1,26 @@
 <template>
-  <div>
-    <p>EN</p>
+  <div @click="changeLang">
+    <p>{{ getCurrLang }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "LocaleWidget",
+  computed: {
+    getCurrLang() {
+      return localStorage.getItem("lang") == "en" ? "AM" : "EN";
+    },
+  },
+  methods: {
+    changeLang() {
+      const currentLang = localStorage.getItem("lang");
+      const langToSet = currentLang == "en" ? "am" : "en";
+      console.log(langToSet);
+      localStorage.setItem("lang", langToSet);
+      window.location.reload();
+    },
+  },
 };
 </script>
 

@@ -1,91 +1,93 @@
 <template>
-  <div class="change-pass">
-    <form @submit.prevent="handleSubmit">
-      <h3>{{ $t("Reset Your Password") }}</h3>
-      <div>
-        <label> {{ $t("Old") }} {{ $t("Password") }} </label>
-        <div class="old-password">
-          <input
-            v-model="passSet.old_password"
-            required
-            placeholder="Input Your Old Password"
-            :type="showOldPassword ? 'text' : 'password'"
-          />
-          <button
-            class="toggle-password"
-            @click.prevent="showOldPassword = !showOldPassword"
-          >
-            <img
-              :src="passwordVisibleIcon.path"
-              :alt="passwordVisibleIcon.alt"
-              v-if="showOldPassword"
+  <main>
+    <div class="change-pass">
+      <form @submit.prevent="handleSubmit">
+        <h3>{{ $t("Reset Your Password") }}</h3>
+        <div>
+          <label> {{ $t("Old") }} {{ $t("Password") }} </label>
+          <div class="old-password">
+            <input
+              v-model="passSet.old_password"
+              required
+              placeholder="Input Your Old Password"
+              :type="showOldPassword ? 'text' : 'password'"
             />
-            <img
-              :src="hiddenPasswordIcon.path"
-              :alt="hiddenPasswordIcon.alt"
-              v-else
-            />
-          </button>
+            <button
+              class="toggle-password"
+              @click.prevent="showOldPassword = !showOldPassword"
+            >
+              <img
+                :src="passwordVisibleIcon.path"
+                :alt="passwordVisibleIcon.alt"
+                v-if="showOldPassword"
+              />
+              <img
+                :src="hiddenPasswordIcon.path"
+                :alt="hiddenPasswordIcon.alt"
+                v-else
+              />
+            </button>
+          </div>
         </div>
-      </div>
-      <div>
-        <label> {{ $t("new") }} {{ $t("Password") }} </label>
-        <div class="new-password">
-          <input
-            v-model="passSet.new_password"
-            required
-            placeholder="Password"
-            :type="showPassword ? 'text' : 'password'"
-          />
-          <button
-            class="toggle-password"
-            @click.prevent="showPassword = !showPassword"
-          >
-            <img
-              :src="passwordVisibleIcon.path"
-              :alt="passwordVisibleIcon.alt"
-              v-if="showPassword"
+        <div>
+          <label> {{ $t("new") }} {{ $t("Password") }} </label>
+          <div class="new-password">
+            <input
+              v-model="passSet.new_password"
+              required
+              placeholder="Password"
+              :type="showPassword ? 'text' : 'password'"
             />
-            <img
-              :src="hiddenPasswordIcon.path"
-              :alt="hiddenPasswordIcon.alt"
-              v-else
-            />
-          </button>
+            <button
+              class="toggle-password"
+              @click.prevent="showPassword = !showPassword"
+            >
+              <img
+                :src="passwordVisibleIcon.path"
+                :alt="passwordVisibleIcon.alt"
+                v-if="showPassword"
+              />
+              <img
+                :src="hiddenPasswordIcon.path"
+                :alt="hiddenPasswordIcon.alt"
+                v-else
+              />
+            </button>
+          </div>
         </div>
-      </div>
-      <div>
-        <div class="confirm-pass">
-          <label> {{ $t("Password") }} {{ $t("Confirm") }}</label>
-          <input
-            v-model="password_confirm"
-            required
-            placeholder="Cofirm password"
-            :type="showConfirmPassword ? 'text' : 'password'"
-          />
-          <button
-            class="toggle-password"
-            @click.prevent="showConfirmPassword = !showConfirmPassword"
-          >
-            <img
-              :src="passwordVisibleIcon.path"
-              :alt="passwordVisibleIcon.alt"
-              v-if="showConfirmPassword"
+        <div>
+          <div class="confirm-pass">
+            <label> {{ $t("Password") }} {{ $t("Confirm") }}</label>
+            <input
+              v-model="password_confirm"
+              required
+              placeholder="Cofirm password"
+              :type="showConfirmPassword ? 'text' : 'password'"
             />
-            <img
-              :src="hiddenPasswordIcon.path"
-              :alt="hiddenPasswordIcon.alt"
-              v-else
-            />
-          </button>
+            <button
+              class="toggle-password"
+              @click.prevent="showConfirmPassword = !showConfirmPassword"
+            >
+              <img
+                :src="passwordVisibleIcon.path"
+                :alt="passwordVisibleIcon.alt"
+                v-if="showConfirmPassword"
+              />
+              <img
+                :src="hiddenPasswordIcon.path"
+                :alt="hiddenPasswordIcon.alt"
+                v-else
+              />
+            </button>
+          </div>
         </div>
-      </div>
 
-      <button>{{ $t("submit") }}</button>
-    </form>
+        <button>{{ $t("submit") }}</button>
+      </form>
 
-    <div>{{ error }}</div>
-  </div>
+      <div>{{ error }}</div>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -149,6 +151,14 @@ export default {
 };
 </script>
 <style scoped>
+main {
+  width: 100%;
+  height: 100vh;
+  /* background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+  color: var(--primary-900); */
+  background: red;
+}
 .change-pass {
   position: absolute;
   left: 50%;

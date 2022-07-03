@@ -1,65 +1,67 @@
 <template>
-  <div class="reset-pass">
-    <form @submit.prevent="handleSubmit">
-      <h3>{{ $t("Reset Your Password") }}</h3>
-      <div>
-        <label> {{ $t("new") }} {{ $t("Password") }} </label>
-        <div class="password">
-          <input
-            v-model="password"
-            required
-            placeholder="Password"
-            :type="showPassword ? 'text' : 'password'"
-          />
-          <button
-            class="toggle-password"
-            @click.prevent="showPassword = !showPassword"
-          >
-            <img
-              :src="passwordVisibleIcon.path"
-              :alt="passwordVisibleIcon.alt"
-              v-if="showPassword"
+  <main>
+    <div class="reset-pass">
+      <form @submit.prevent="handleSubmit">
+        <h3>{{ $t("Reset Your Password") }}</h3>
+        <div>
+          <label> {{ $t("new") }} {{ $t("Password") }} </label>
+          <div class="password">
+            <input
+              v-model="password"
+              required
+              placeholder="Password"
+              :type="showPassword ? 'text' : 'password'"
             />
-            <img
-              :src="hiddenPasswordIcon.path"
-              :alt="hiddenPasswordIcon.alt"
-              v-else
-            />
-          </button>
+            <button
+              class="toggle-password"
+              @click.prevent="showPassword = !showPassword"
+            >
+              <img
+                :src="passwordVisibleIcon.path"
+                :alt="passwordVisibleIcon.alt"
+                v-if="showPassword"
+              />
+              <img
+                :src="hiddenPasswordIcon.path"
+                :alt="hiddenPasswordIcon.alt"
+                v-else
+              />
+            </button>
+          </div>
         </div>
-      </div>
-      <div>
-        <div class="confirm-pass">
-          <label> {{ $t("Password") }} {{ $t("Confirm") }}</label>
-          <input
-            v-model="password_confirm"
-            required
-            placeholder="Cofirm password"
-            :type="showConfirmPassword ? 'text' : 'password'"
-          />
-          <button
-            class="toggle-password"
-            @click.prevent="showConfirmPassword = !showConfirmPassword"
-          >
-            <img
-              :src="passwordVisibleIcon.path"
-              :alt="passwordVisibleIcon.alt"
-              v-if="showConfirmPassword"
+        <div>
+          <div class="confirm-pass">
+            <label> {{ $t("Password") }} {{ $t("Confirm") }}</label>
+            <input
+              v-model="password_confirm"
+              required
+              placeholder="Confirm password"
+              :type="showConfirmPassword ? 'text' : 'password'"
             />
-            <img
-              :src="hiddenPasswordIcon.path"
-              :alt="hiddenPasswordIcon.alt"
-              v-else
-            />
-          </button>
+            <button
+              class="toggle-password"
+              @click.prevent="showConfirmPassword = !showConfirmPassword"
+            >
+              <img
+                :src="passwordVisibleIcon.path"
+                :alt="passwordVisibleIcon.alt"
+                v-if="showConfirmPassword"
+              />
+              <img
+                :src="hiddenPasswordIcon.path"
+                :alt="hiddenPasswordIcon.alt"
+                v-else
+              />
+            </button>
+          </div>
         </div>
-      </div>
 
-      <button>{{ $t("submit") }}</button>
-    </form>
+        <button>{{ $t("submit") }}</button>
+      </form>
 
-    <div>{{ error }}</div>
-  </div>
+      <div>{{ error }}</div>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -111,6 +113,14 @@ export default {
 };
 </script>
 <style scoped>
+main {
+  width: 100%;
+  height: 100vh;
+  /* background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+  color: var(--primary-900); */
+  background: red;
+}
 .reset-pass {
   position: absolute;
   left: 50%;
