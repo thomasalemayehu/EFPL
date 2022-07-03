@@ -104,17 +104,15 @@ export default {
   height: fit-content;
   object-fit: contain;
 }
-/*  */
 .player-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
-  /* margin-top: var(--spacing-large); */
   min-height: 110px;
   border-bottom: 2px solid var(--neutral-200);
   font-size: 16px;
-  color: var(--neutral-900);
+  color: var(--primary-900);
 }
 .player-container:nth-of-type(odd) {
   background: var(--neutral-200);

@@ -108,10 +108,7 @@ import {
   editIcon,
   deleteIcon,
 } from "@/utils/Icons";
-
-// Components
-// import TeamComponent from "@/components/TeamComponent";
-import DashLeagueTableComponent from "@/components/dashLeagueTableComponent";
+import DashLeagueTableComponent from "@/components/DashLeagueTableComponent";
 import SpinnerComponent from "@/components/SpinnerComponent.vue";
 export default {
   name: "TeamsComponent",

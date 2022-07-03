@@ -190,6 +190,7 @@ export default {
 .seasonSetting {
   margin-top: -20px;
   height: 60px;
+  background: red;
 }
 
 .accLink-1,

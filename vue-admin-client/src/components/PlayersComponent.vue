@@ -9,7 +9,7 @@
     <!-- Modal -->
     <input
       type="text"
-      class="team-search-bar"
+      class="player-search-bar"
       @keyup="searchBarFilter"
       placeholder="Search Term Here..."
       ref="searchBar"
@@ -366,6 +366,10 @@ export default {
 
 .players-main-container {
   width: 100%;
+  padding: 24px 16px;
+  background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+  color: var(--primary-900);
 }
 .player-search-bar {
   width: 20%;
@@ -373,6 +377,9 @@ export default {
   margin-left: 80%;
   padding: 0 3px;
   outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary-900);
+  background: transparent;
 }
 .players-header-container {
   margin-top: var(--spacing-medium);
@@ -398,7 +405,7 @@ export default {
   right: 0%;
   background: var(--primary-900);
   padding: 5px 22px 5px 16px;
-  color: var(--neutral-100);
+  color: var(--neutral-200);
   display: flex;
 }
 .players-add-new > div {
@@ -421,9 +428,11 @@ export default {
 }
 .players-filter-section select {
   height: 30px;
-  border: none;
+  border: 1px solid var(--primary-900);
+  border-radius: 5px;
   outline: none;
   margin-left: 4px;
+  background: transparent;
 }
 /* Overrides */
 .multi-range-slider {
@@ -437,10 +446,9 @@ export default {
 }
 .reset-filter-button {
   font-size: 16px;
-
   background: var(--primary-900);
   padding: 5px 22px 5px 16px;
-  color: var(--neutral-100);
+  color: var(--neutral-200);
   display: flex;
   align-items: center;
 }
