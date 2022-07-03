@@ -1,6 +1,10 @@
 {
   "header": "This is the about page",
 
+  "_comment_login": "Login Translations",
+  "A brand new way to enjoy the Ethiopian Premier League": "A brand new way to enjoy the Ethiopian Premier League",
+  "Ethiopian Fantasy Premier League": "Ethiopian Fantasy Premier League",
+
   "_comment_navigation": "Navigation Translations",
   "home": "Home",
   "admin": "Admin",

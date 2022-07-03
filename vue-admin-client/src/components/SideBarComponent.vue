@@ -4,7 +4,9 @@
       <span>&#11164;</span>
     </button>
     <div class="sidebar-wrapper">
-      <h1 class="sidebar-header">Ethiopian Fantasy Premier League</h1>
+      <h1 class="sidebar-header">
+        {{ $t("Ethiopian Fantasy Premier League") }}
+      </h1>
       <!-- Home -->
       <div class="sidebar__item">
         <div class="side__bar__icon">
@@ -126,7 +128,8 @@ aside {
       text-decoration: none;
       font-size: var(--text-regular);
       font-weight: 500;
-      color: var(--neutral-900);
+      color: var(--neutral-200);
+      font-size: 18px;
     }
   }
 

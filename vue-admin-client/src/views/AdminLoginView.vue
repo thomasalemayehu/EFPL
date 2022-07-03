@@ -2,9 +2,9 @@
   <section class="main-container">
     <div class="left-section">
       <img src="../assets/img/Ethiopian_Premier_League_LOGO.png" alt="" />
-      <h1 class="left-h1">Ethiopian Fantasy Premier League</h1>
+      <h1 class="left-h1">{{ $t("Ethiopian Fantasy Premier League") }}</h1>
       <p class="left-p">
-        A brand new way to enjoy the Ethiopian Premier League
+        {{ $t("A brand new way to enjoy the Ethiopian Premier League") }}
       </p>
     </div>
     <div class="right-section">
