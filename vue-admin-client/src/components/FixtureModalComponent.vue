@@ -281,7 +281,7 @@
   background: rgba(0, 0, 0, 0.65);
   z-index: 2;
   overflow: hidden;
-  color: var(--neutral-900);
+  color: var(--primary-900);
 }
 .fixture-modal-close {
   position: absolute;
@@ -308,7 +308,6 @@
   display: flex;
   align-items: flex-start;
   padding: 0 16px;
-  /* position: relative; */
 }
 .fixture-modal-scroller {
   width: 100%;
@@ -335,12 +334,10 @@
   flex-direction: column;
   align-items: center;
 }
-
 .fixture-team-logo {
   width: 160px;
   height: 160px;
   background: url("../assets/img/Team_Logo_Placeholder.jpg");
-
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -354,7 +351,7 @@
 label {
   margin-bottom: 8px;
   font-size: 15px;
-  color: var(--neutral-800);
+  color: var(--primary-900);
 }
 label > span {
   font-size: 10px;

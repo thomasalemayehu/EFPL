@@ -185,6 +185,10 @@
 }
 .teams-main-container {
   width: 100%;
+  padding: 24px 16px;
+  background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+  color: var(--primary-900);
 }
 .team-search-bar {
   width: 20%;
@@ -192,6 +196,9 @@
   margin-left: 80%;
   padding: 0 3px;
   outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary-900);
+  background: transparent;
 }
 .teams-header-container {
   margin-top: var(--spacing-medium);

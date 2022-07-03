@@ -581,6 +581,10 @@ p {
   overflow: hidden;
 }
 
+#main-fixture-detail-field {
+  padding: 24px 0;
+}
+
 #goalkeepers,
 #defenders,
 #midfielders,
@@ -596,7 +600,8 @@ p {
   height: 20%; /* Neccessary for the labels*/
   padding: 10px 0;
   /* border: 1px solid black; */
-  background-color: var(--success-500);
+  background-color: var(--primary-900);
+  text-align: center;
 }
 
 #goalkeepers div:first-child,
@@ -619,7 +624,7 @@ p {
 
 #bench {
   justify-content: flex-start;
-  background-color: var(--secondary-200);
+  background-color: var(--neutral-200);
   padding: 5px;
 }
 
@@ -630,7 +635,7 @@ p {
 #bench label {
   font-size: 6vh;
   letter-spacing: 25px;
-  color: var(--success-100);
+  color: var(--neutral-200);
   opacity: 0.7;
   z-index: 0;
 }
@@ -638,7 +643,7 @@ p {
 #bench label {
   /* left: 15vw; */
   position: absolute;
-  color: var(--secondary-600);
+  color: var(--primary-900);
 }
 
 .field-player {
@@ -646,7 +651,8 @@ p {
   flex-direction: column;
   align-items: center;
   padding: var(--spacing-2xsmall);
-  background-color: var(--primary-100);
+  background-color: var(--neutral-100);
+  color: var(--primary-color);
   border-radius: 2px;
   margin: 0 5px;
   z-index: 1;
@@ -656,6 +662,7 @@ p {
   width: 99px;
   box-shadow: 0 1px 2px var(--primary-500);
   font-size: var(--text-small);
+  text-align: center;
 }
 
 .field-player-hover-sub {
@@ -671,10 +678,10 @@ p {
   border: 0;
   width: 200px;
   height: 50px;
-  color: white;
+  color: var(--neutral-200);
   cursor: pointer;
   font-size: var(--text-base);
-  background: #07385e; /* Primary-900 */
+  background: var(--primary-900); /* Primary-900 */
   box-shadow: 0px 2px 0px #38bdf8;
   border-radius: 2px;
 }
@@ -683,9 +690,9 @@ p {
   border: 0;
   width: 200px;
   height: 50px;
-  color: #07385e;
+  color: var(--neutral-200);
   font-size: var(--text-base);
-  background: #b5f0ff; /* Primary-200 */
+  background: var(--primary-800); /* Primary-200 */
   box-shadow: 0px 2px 0px #38bdf8;
   border-radius: 2px;
 }

@@ -135,6 +135,7 @@ export default {
 #main-fixture-detail-locker {
   display: flex;
   flex-direction: row;
+  padding: 24px;
 }
 
 .locker-room {
@@ -150,6 +151,8 @@ export default {
   writing-mode: vertical-lr;
   text-orientation: upright;
   text-align: center;
+  color: var(--primary-900);
+  font-size: 20px;
 }
 
 .locker-player {
@@ -157,7 +160,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   margin: var(--spacing-2xsmall);
-  background-color: var(--primary-100);
+  background-color: var(--neutral-200);
   border-radius: 2px;
 }
 

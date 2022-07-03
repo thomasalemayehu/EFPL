@@ -214,12 +214,12 @@
 }
 
 .fixtures-main-container {
-  /* width: 100%; */
-  /* margin-left: 18%; */
   min-height: 100vh;
   display: grid;
   place-items: center;
-  /* padding: 100px 24px 60px 16px; */
+  background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+  color: var(--primary-900);
 }
 .gameweek-container {
   width: 100%;
@@ -235,6 +235,9 @@
   margin-left: 80%;
   padding: 0 3px;
   outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary-900);
+  background: transparent;
 }
 .gameweek-main-header {
   margin-top: var(--spacing-medium);

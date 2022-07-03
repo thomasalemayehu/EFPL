@@ -388,6 +388,10 @@ export default {
 <style scoped>
 .team-modal-content {
   position: relative;
+  color: var(--primary-900);
+}
+.main-label {
+  color: var(--primary-color);
 }
 .team-modal-image-section {
   width: 250px;

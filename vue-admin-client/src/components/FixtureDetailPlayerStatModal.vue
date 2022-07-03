@@ -158,7 +158,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.65);
   height: 100vh;
   width: 100vw;
   z-index: 10;

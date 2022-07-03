@@ -145,6 +145,7 @@
   border-bottom: 2px solid var(--neutral-200);
   color: var(--neutral-900);
   padding-right: 12px;
+  color: var(--primary-900);
 }
 .fixture-main-container:nth-of-type(odd) {
   background: var(--neutral-200);

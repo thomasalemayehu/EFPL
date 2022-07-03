@@ -6,6 +6,8 @@
       <!-- <router-view /> -->
       <MainView />
       <NotificationComponent />
+
+      <LocaleWidget />
     </main>
   </div>
 </template>
@@ -14,12 +16,14 @@
 import MainView from "@/views/MainView.vue";
 import NotificationComponent from "@/components/NotificationComponent.vue";
 import SideBar from "@/components/SideBarComponent.vue";
+import LocaleWidget from "@/components/LocaleWidget.vue";
 
 export default {
   components: {
     SideBar,
     MainView,
     NotificationComponent,
+    LocaleWidget,
   },
 
   data() {
@@ -47,27 +51,6 @@ export default {
 
 <style>
 @import "./assets/design-system.css";
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
 
 <style lang="scss">

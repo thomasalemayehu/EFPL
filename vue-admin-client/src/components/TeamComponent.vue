@@ -52,7 +52,7 @@
   min-height: 110px;
   border-bottom: 2px solid var(--neutral-200);
   font-size: 16px;
-  color: var(--neutral-900);
+  color: var(--primary-900);
 }
 .team-container:nth-of-type(odd) {
   background: var(--neutral-200);

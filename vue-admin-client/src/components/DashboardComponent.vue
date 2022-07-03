@@ -202,6 +202,10 @@ export default {
 };
 </script>
 <style scoped>
+main {
+  background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+}
 /* Icons */
 .extra-small-icon {
   width: 7px;
@@ -296,14 +300,13 @@ export default {
 }
 
 /* ===================== */
-@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap"); */
 
-body {
-  background: rgba(0, 0, 0, 0.1);
-  /* background: url(https://image.freepik.com/free-vector/abstract-gradient-shapes-background_79603-156.jpg); */
-  backdrop-filter: blur(10px);
+.no-teams-container {
+  height: 400px;
+  display: grid;
+  place-items: center;
 }
-
 .main-wrapper {
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
