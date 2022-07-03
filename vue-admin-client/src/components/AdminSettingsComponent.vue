@@ -20,63 +20,99 @@
       :saveAction="exportSeasonDataModal"
       @closeModal="closeConfirmModal"
     />
-    <h1>{{ $t("Settings") }}</h1>
-    <!-- account settings -->
-    <button class="collapseAcc" @click="toggleAcc()">
-      <span>{{ $t("Manage Account") }}</span>
-    </button>
-    <div v-if="accMenu" class="accMenu">
-      <div>
-        <router-link :to="{ name: 'change-password' }"
-          ><button class="accLink-1">
-            <h3>{{ $t("Change Password") }}</h3>
-          </button></router-link
-        >
+
+    <div class="settings-content">
+      <div class="appearance-section">
+        <h3>{{ $t("Appearance") }}</h3>
+        <p>{{ $t("Choose an accent color") }}</p>
+
+        <div class="appearance-color-swatch">
+          <div class="color-swatch active-swatch">
+            <div>
+              <img src="../assets/icons/check-mark.svg" alt="" />
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+          <div class="color-swatch">
+            <div></div>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <button class="accLink-2" @click="logOutAdmin">
-          <h3>{{ $t("Logout") }}</h3>
-        </button>
-      </div>
-    </div>
+      <div class="export-import-section">
+        <h3>{{ $t("Backup & Restore") }}</h3>
+        <p>
+          {{ $t("Import and Export season data") }}
+          <span
+            >({{ $t("Export of complete season clears current season") }})</span
+          >
+        </p>
 
-    <!-- language settings -->
-    <div>
-      <button class="collapseLang" @click="toggleLang()">
-        <span>{{ $t("Select language") }}</span>
-      </button>
-    </div>
-    <div v-if="langMenu" class="languageSelect">
-      <select v-model="lang" @change="changeLang($event)" class="lang-selector">
-        <option value="en">{{ $t("English") }}</option>
+        <div class="export-import-actions">
+          <div @click="initiateImport">{{ $t("Import") }}</div>
+          <div @click="exportSeasonData">{{ $t("Export") }}</div>
+        </div>
 
-        <option value="am">{{ $t("Amharic") }}</option>
-      </select>
-    </div>
+        <div class="contact-section">
+          <h3>{{ $t("Contact") }}</h3>
 
-    <!-- contact page  -->
-    <div class="contact-page">
-      <router-link :to="{ name: 'contact' }"
-        ><button class="contactButton">
-          {{ $t("Contact Us") }}
-        </button></router-link
-      >
-    </div>
-    <!-- import export  -->
-    <button class="collapseSeason" @click="toggleSeason()">
-      <span>{{ $t("Import") }} / {{ $t("Export") }}</span>
-    </button>
-    <div v-if="seasonMenu" class="seasonSetting">
-      <div>
-        <button @click="initiateImport" class="import">
-          {{ $t("Import") }}
-        </button>
-      </div>
-      <div>
-        <button @click="exportSeasonData" class="export">
-          {{ $t("Export") }}
-        </button>
+          <p>{{ $t("Contact the developers") }}</p>
+
+          <div>
+            <router-link :to="{ name: 'contact' }">
+              {{ $t("Contact Us") }}
+            </router-link>
+          </div>
+        </div>
+
+        <div class="language-section">
+          <h3>{{ $t("Language") }}</h3>
+
+          <p>{{ $t("Select language") }}</p>
+
+          <select name="" id="" @change="changeLang($event)">
+            <option value="am">{{ $t("Amharic") }}</option>
+            <option value="en">{{ $t("English") }}</option>
+          </select>
+        </div>
+
+        <div class="manage-account-section">
+          <h3>{{ $t("Manage Account") }}</h3>
+
+          <p>{{ $t("Manage your account") }}</p>
+
+          <div class="manage-account-action">
+            <div class="logout" @click="logOutAdmin">{{ $t("Logout") }}</div>
+            <div class="reset">
+              <router-link :to="{ name: 'forgot-password' }">
+                {{ $t("Reset Password") }}
+              </router-link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -160,60 +196,122 @@ export default {
 
 <style scoped>
 @import "../assets/design-system.css";
+.settings-content {
+  padding: 24px 16px 24px 60px;
+  background: linear-gradient(to right, #ebf2fad4, #ebf2fad4),
+    url("../assets/img/pipes.png");
+  color: var(--primary-900);
+  min-height: 100vh;
+}
+h3 {
+  padding-top: 12px;
+  color: var(--primary-900);
+}
 
-.collapseAcc,
-.collapseLang,
-.contactButton,
-.collapseSeason {
-  width: 80%;
-  height: 60px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background: var(--neutral-400);
-  color: var(--neutral-900);
-  font-size: var(--text-medium);
-  margin: var(--spacing-regular);
+p {
+  margin-top: 16px;
 }
-.collapseAcc:hover,
-.collapseLang:hover,
-.contactButton:hover,
-.collapseSeason:hover,
-.accLink-1:hover,
-.accLink-2:hover,
-.import:hover,
-.export:hover {
-  background: var(--neutral-900);
-  color: var(--neutral-50);
+.appearance-color-swatch {
+  margin-top: 12px;
+  display: flex;
 }
-.accMenu,
-.languageSelect,
-.seasonSetting {
-  margin-top: -20px;
-  height: 60px;
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  margin-right: 24px;
+  border-radius: 50%;
   background: red;
+  display: grid;
+  place-items: center;
 }
-
-.accLink-1,
-.accLink-2,
-.import,
-.export {
-  width: 80%;
-  height: 30px;
-  background-color: var(--neutral-50);
-  border: none;
+.appearance-color-swatch > div:nth-of-type(1) {
+  background: var(--primary-900);
 }
-
-.lang-selector {
-  width: 80%;
-  height: 30px;
-  border: none;
+.appearance-color-swatch > div:nth-of-type(2) {
+  background: #0fd267;
 }
-@media screen and (max-width: 768px) {
-  .collapseAcc,
-  .collapseLang,
-  .contactButton,
-  .collapseSeason {
-    width: 100%;
-  }
+.appearance-color-swatch > div:nth-of-type(3) {
+  background: #ebbe11;
+}
+.appearance-color-swatch > div:nth-of-type(4) {
+  background: #e99e0f;
+}
+.appearance-color-swatch > div:nth-of-type(5) {
+  background: #e91111;
+}
+.appearance-color-swatch > div:nth-of-type(6) {
+  background: #ea1193;
+}
+.appearance-color-swatch > div:nth-of-type(7) {
+  background: #cc10ea;
+}
+.appearance-color-swatch > div:nth-of-type(8) {
+  background: #5a10ea;
+}
+.appearance-color-swatch > div:nth-of-type(9) {
+  background: #479fbd;
+}
+.appearance-color-swatch > div:nth-of-type(10) {
+  background: #0abb91;
+}
+.color-swatch > div {
+  display: none;
+}
+.active-swatch > div,
+.active-swatch > div > img {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.export-import-section,
+.contact-section,
+.language-section,
+.manage-account-section {
+  margin-top: 36px;
+}
+p > span {
+  font-size: 14px;
+  color: rgba(255, 0, 0, 0.793);
+}
+.export-import-actions {
+  display: flex;
+  margin-top: 12px;
+}
+.export-import-actions > div {
+  padding: 8px 16px;
+  background: var(--primary-900);
+  margin-right: 16px;
+  color: var(--neutral-200);
+}
+.contact-section > div {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: var(--primary-900);
+  width: fit-content;
+  color: var(--neutral-200);
+}
+.language-section > select {
+  margin-top: 12px;
+  height: 32px;
+  outline: none;
+  border: 1px solid var(--primary-900);
+  border-radius: 5px;
+  width: 20%;
+}
+.manage-account-action {
+  display: flex;
+}
+.manage-account-action > div {
+  margin-top: 12px;
+  margin-right: 12px;
+  padding: 8px 16px;
+  background: var(--primary-900);
+  width: fit-content;
+  color: var(--neutral-200);
+  text-align: center;
+}
+a {
+  color: var(--neutral-200);
+  text-decoration: none;
 }
 </style>
