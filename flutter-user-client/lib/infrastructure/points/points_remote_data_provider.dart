@@ -33,6 +33,7 @@ class PointsInfoRemoteDataProvider {
             Duration(seconds: ConstantValues().httpTimeOutDuration),
           );
 
+    
       // success
       if (apiResponse.statusCode == 200) {
         dynamic parsedBody = jsonDecode(apiResponse.body);

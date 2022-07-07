@@ -137,7 +137,7 @@ const fetchUserTeam = asyncHandler(async (req, res) => {
 
   const team = user.team[req.params.gw];
 
-  for (const playerId in team.players) {
+  for (const playerId in team?.players) {
     const player = await Player.findOne(
       { playerId },
       {
@@ -634,6 +634,7 @@ const getUserTeam = asyncHandler(async (req, res) => {
     }
   } catch (e) {
     // error verifying token
+    console.log(e);
 
     res.status(401).send("Error Decoding token");
   }
@@ -713,8 +714,7 @@ const getUserPoints = asyncHandler(async (req, res) => {
             : [];
 
           const currentPlayerCurrentGwScore = currentPlayerAllScore.filter(
-            (scoreInfo) =>
-              scoreInfo.gameweekId.toString() === gameWeekId.toString()
+            (scoreInfo) => scoreInfo.gameweekId === gameWeekId
           );
 
           const currentPlayerTeamFixture = await Fixture.findOne({
@@ -778,6 +778,7 @@ const getUserPoints = asyncHandler(async (req, res) => {
       res.status(404).send(finalFormat);
     }
   } catch (err) {
+    console.log(err);
     res.status(403).send("Error Decoding token");
   }
 });

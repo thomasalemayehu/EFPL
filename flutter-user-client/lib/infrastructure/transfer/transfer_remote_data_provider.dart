@@ -228,6 +228,8 @@ class TransferRemoteDataProvider {
           .timeout(
             Duration(seconds: ConstantValues().httpTimeOutDuration),
           );
+
+      
       // success
       if (apiResponse.statusCode == 200) {
         List<UserPlayer> allUserPlayers = [];
@@ -240,24 +242,6 @@ class TransferRemoteDataProvider {
 
         if (parseResponseTeam.length > 0 &&
             parseResponseTeam['players'].length > 0) {
-          // List allPlayers = parseResponseTeam['players'];
-          // for (var i = 0; i < allPlayers.length; i++) {
-          //   Map<String, dynamic> availability = {
-          //     "injuryStatus":
-          //         allPlayers[i]['availability']['injuryStatus'] ?? "",
-          //     "injuryMessage":
-          //         allPlayers[i]['availability']['injuryMessage'] ?? ""
-          //   };
-
-          //   allPlayers[i]['availability'] = availability;
-
-          //   final UserPlayerDTO userPlayerDTO =
-          //       UserPlayerDTO.fromJson(allPlayers[i]);
-
-          //   allUserPlayersJson.add(allPlayers[i]);
-          //   allUserPlayers.add(userPlayerDTO.toDomain());
-          // }
-
           for (var i = 0; i < parseResponseTeam['players'].length; i++) {
             List allPlayers = parseResponseTeam['players'];
             Map<String, dynamic> availability = {
