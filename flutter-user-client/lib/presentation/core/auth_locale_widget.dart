@@ -25,16 +25,17 @@ class AuthLocaleWidget extends StatelessWidget {
           child: Container(
             width: 50,
             height: 50,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(
+            decoration: const BoxDecoration(
+              color: ConstantColors.primary_900,
+              borderRadius: BorderRadius.all(
                 Radius.circular(50),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ConstantColors.primary_900.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: const Offset(
+                  color: ConstantColors.primary_900,
+                  spreadRadius: 1,
+                  blurRadius: 3,
+                  offset: Offset(
                     0,
                     3,
                   ), // changes position of shadow
@@ -43,13 +44,12 @@ class AuthLocaleWidget extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(50),
-              child: Image.asset(
+              child: 
                 getIt<UtilBloc>().state.locale.toString() == "en" ||
                         getIt<UtilBloc>().state.locale.toString() == ""
-                    ? 'assets/images/usa-flag.png'
-                    : 'assets/images/ethiopian-flag.png',
-                fit: BoxFit.cover,
-              ),
+                    ? Center(child: Text("EN",style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ConstantColors.neutral_200,),),)
+                    :Center(child: Text("AM",style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ConstantColors.neutral_200,),),),
+              
             ),
             // child: Text(
             //   state.locale.toString(),
